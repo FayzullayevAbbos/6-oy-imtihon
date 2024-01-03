@@ -18,39 +18,45 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
   const [lop, setLop] = useState(0);
   let sendQuiz = 0;
   const [savolniTekshir, setSavolniTekshir] = useState(true);
-  let olibtashla = false;
+  const [olibtashla , setOlibtashla] = useState(true)
   console.log(getI);
   function celacted(i) {
-    console.log(i);
+  
     setLop(i);
     const options = document.querySelectorAll(".options");
 
-    if (count) {
-      options.forEach((option) => {
-        option.classList.remove("selected");
-        setCount(false);
-      });
-    } else {
-      options[i].classList.add("selected");
-      setCount(true);
+    console.log(olibtashla);
+    if(olibtashla){
+      if (count) {
+        options.forEach((option) => {
+          option.classList.remove("selected");
+          setCount(false);
+        });
+      } else {
+        options[i].classList.add("selected");
+        setCount(true);
+      }
     }
   }
   
   useEffect(() =>{
     const intId = setInterval(() => {
        setStart(false)
-       setSum(true)
-       
+      
+      setOlibtashla(false)
        clearInterval(intId)
+       setSum(true)
     }, 9000);
     if(getI[0]){
       setStart(true)
+      setSum(false)
     }
   },[changeQuiz])
 
   
   // this function for submit Answer
   function subAns() {
+    // setSum(false)
     const options = document.querySelectorAll(".options");
     console.log(getI[changeQuiz]?.answers);
     console.log(changeQuiz);
@@ -60,7 +66,7 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
         console.log(savolniTekshir);
         console.log("savolni tekshir");
         if (getI[changeQuiz].correct_answer == lop) {
-          console.log("savol togri");
+        
           setScore((score) => score + 1)
           setStart(false) 
           setSavolniTekshir(false);
