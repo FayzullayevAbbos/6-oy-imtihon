@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-text-col: #313e51;
+  --bg-col: #f4f6fa;
+  --purple: #a729f5;
+  --sec-col: #626c7f;
+  --options-col: #fff;
+}
+.h-full {
+  height: 100%;
+}
+.app {
+  background: url("./images/top-left.svg") no-repeat top left,
+    url("./images/right-bottom.svg") no-repeat right bottom, var(--bg-col);
+  height: 100%;
+}
+.app2 {
+  background: url("./images/top-left2.svg") no-repeat top left,
+    url("./images/right-bottom2.svg") no-repeat bottom right, var(--bg-col);
+  height: 100%;
+}
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.dark {
+  --main-text-col: #ffffff !important;
+  --sec-col: #abc1e1 !important;
+  --bg-col: #313e51 !important;
+  --options-col: #3b4d66 !important ;
+}
+
+/* =============================HEADER======================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 9px;
+  padding: 98px 0;
+}
+.pode {
+  width: 50px;
+  height: 28px;
+  background: var(--purple);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.just-end {
+  justify-content: end;
+}
+.pode-mode {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fff;
+}
+/* ===============================HOME========================== */
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sec-h1-1 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 100%;
+  color: var(--main-text-col);
+}
+.sec-h1-2 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--main-text-col);
+  margin-bottom: 48px;
+}
+.sec-p {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sec-col);
+}
+
+.section2 {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.options {
+  display: flex;
+  position: relative;
+  
+  padding: 20px;
+  align-items: center;
+  gap: 32px;
+  cursor: pointer;
+  border-radius: 24px;
+  background: var(--options-col);
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+}
+.a {
+  background: var(--bg-col);
+  padding: 4px 11px;
+  border-radius: 8px;
+}
+.options p {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--main-text-col);
+} 
+.options svg{
+  position: absolute;
+  right:10px;
+}
+/* ============================= MAIN - PAGE ============================= */
+.main-page {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.m-p {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sec-col);
+}
+.m-h1 {
+  font-size: 36px;
+  color: var(--main-text-col);
+  font-weight: 500;
+}
+.m-sec-left {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  width: 450px;
+}
+
+.m-sec-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.btn {
+  display: flex;
+  padding: 13px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 24px;
+  border: none;
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  background: var(--purple);
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+}
+.btn:active {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    var(--Purple, #a729f5);
+  
+}
+
+.tab {
+  margin: 0 auto;
+  width: 100%;
+  background: var(--options-col);
+  border-radius: 24px;
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 45px 0;
+}
+.logo img {
+  padding: 4px 11px;
+  background: rgba(137, 70, 188, 0.4);
+  border-radius: 10px;
+}
+.logo p {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--main-text-col);
+}
+.achko {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  font-size: 144px;
+  font-weight: 500;
+  color: var(--main-text-col);
+  padding-bottom: 20px;
+}
+
+.how {
+  text-align: center;
+  font-size: 24px;
+  color: var(--sec-col);
+  padding-bottom: 15px;
+  font-weight: 400;
+}
+
+.selected{
+  border: 1px solid var(--purple);
+}
+
+.timer{
+  width: 100%;
+  padding: 6px ;
+ margin-top: 30px;
+ border-radius: 999px;
+  background: var(--options-col);
+}
+.time{
+  background: var(--purple);
+  height: 8px;
+  border-radius: 104px;
+  width: 2%;
+}
+.start-timer{
+  animation: fill ease-in-out 10s forwards;
+}
+@keyframes fill{
+  from{
+    width: 2%;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 850px) {
+  .app {
+    background: url("./images/top-left.svg") no-repeat, var(--bg-col);
+    height: auto !important;
+    background-position-x: -100px;
+    background-position-y: -100px;
+  }
+  .app2 {
+    background: url("./images/top-left2.svg") no-repeat top left, var(--bg-col);
+    height: auto !important;
+    background-position-x: -100px;
+    background-position-y: -100px;
+  }
+  .home,
+  .main-page {
+    flex-direction: column;
+    align-items: start;
+    gap: 64px;
+   
+  }
+  .section2,
+  .m-sec-right {
+    width: 100%;
+  }
+  .section1 {
+    width: 100%;
+  }
+  .h-full {
+    height: auto;
+  }
+  .header {
+    padding: 70px 0 !important;
+  }
+  .container {
+    padding: 0 13px;
+  }
+  .h-full {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 0 13px;
+  }
+  .section1 h1 {
+    font-size: 40px;
+  }
+  .section1 p,
+  .m-sec-left p {
+    font-size: 14px;
+  }
+  .options p {
+    font-size: 18px;
+  }
+  .m-sec-left h1 {
+    font-size: 20px;
+  }
+  .header {
+    padding: 50px 0 !important;
+  }
+  .btn {
+    padding: 8px;
+    font-size: 20px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .logo img{
+    width: 50px;
+  }
+  .logo p{
+    font-size: 20px;
+  }
+  .achko{
+    font-size: 88px;
+  }
+  .how{
+    font-size: 18px;
+  }
+  .app{
+    height: 100% !important;
+  }
+  .app2   {
+    height: 100% !important;
+  }
+}
