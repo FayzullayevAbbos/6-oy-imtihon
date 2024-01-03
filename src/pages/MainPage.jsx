@@ -18,15 +18,14 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
   const [lop, setLop] = useState(0);
   let sendQuiz = 0;
   const [savolniTekshir, setSavolniTekshir] = useState(true);
-  const [olibtashla , setOlibtashla] = useState(true)
-  console.log(getI);
+  const [olibtashla, setOlibtashla] = useState(true);
+ 
   function celacted(i) {
-  
     setLop(i);
     const options = document.querySelectorAll(".options");
 
     console.log(olibtashla);
-    if(olibtashla){
+    if (olibtashla) {
       if (count) {
         options.forEach((option) => {
           option.classList.remove("selected");
@@ -38,38 +37,34 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
       }
     }
   }
-  
-  useEffect(() =>{
-    const intId = setInterval(() => {
-       setStart(false)
-      
-      setOlibtashla(false)
-       clearInterval(intId)
-       setSum(true)
-    }, 9000);
-    if(getI[0]){
-      setStart(true)
-      setOlibtashla(true)
-      setSum(false)
-    }
-  },[changeQuiz])
 
-  
+  useEffect(() => {
+    const intId = setInterval(() => {
+      setStart(false);
+
+      setOlibtashla(false);
+      setChangeQuiz((changeQuiz) => changeQuiz + 1);
+
+      clearInterval(intId);
+      setSum(true);
+    }, 9000);
+    if (getI[0]) {
+      setStart(true);
+      setOlibtashla(true);
+      setSum(false);
+    }
+  }, [changeQuiz]);
+
   // this function for submit Answer
   function subAns() {
     // setSum(false)
     const options = document.querySelectorAll(".options");
-    console.log(getI[changeQuiz]?.answers);
-    console.log(changeQuiz);
     if (count) {
       // agar tanlangan elementni id si bilan tug'ri javob id si teng bulsa bu svg ni qo'sh
       if (savolniTekshir) {
-        console.log(savolniTekshir);
-        console.log("savolni tekshir");
         if (getI[changeQuiz].correct_answer == lop) {
-        
-          setScore((score) => score + 1)
-          setStart(false) 
+          setScore((score) => score + 1);
+          setStart(false);
           setSavolniTekshir(false);
           options[lop].innerHTML += `<svg
         className="pos"
@@ -85,8 +80,8 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
         />
       </svg>`;
         } else {
-          setStart(false)
-          console.log("savol notogri");
+          setStart(false);
+
           // agar tanlangan elementni id si bilan tug'ri  javob id si teng bo'lmasa bu svg ni qo'sh
           setSavolniTekshir(false);
 
@@ -100,7 +95,6 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
 
         // selected class ni olib tashla , countni false qil , btn text ni submit answer ga uzgartir , tanlanmaganlik haqida xabar ber
       } else {
-        console.log("savol tekshirildi");
         options.forEach((option) => {
           option.classList.remove("selected");
           setCount(false);
@@ -108,8 +102,7 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
           setSum(false);
         });
         options[lop].removeChild(options[lop].lastChild);
-        console.log(options[lop]);
-       
+        
 
         setSum(true);
         setSavolniTekshir(true);
@@ -147,7 +140,11 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
             to={changeQuiz == 5 ? "access" : ""}
           >
             <button className="btn">
-              { changeQuiz == 5 ? "Score" : sum ? "Next question" : "Submit Answer"}
+              {changeQuiz == 5
+                ? "Score"
+                : sum
+                ? "Next question"
+                : "Submit Answer"}
             </button>
           </Link>
         </section>
