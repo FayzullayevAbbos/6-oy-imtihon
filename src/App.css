@@ -13,17 +13,17 @@
   --options-col: #fff;
 }
 .h-full {
-  height: 100%;
+  height: 100% !important;
 }
 .app {
   background: url("./images/top-left.svg") no-repeat top left,
     url("./images/right-bottom.svg") no-repeat right bottom, var(--bg-col);
-  height: 100%;
+  height: 100% !important;
 }
 .app2 {
   background: url("./images/top-left2.svg") no-repeat top left,
     url("./images/right-bottom2.svg") no-repeat bottom right, var(--bg-col);
-  height: 100%;
+  height: 100% !important;
 }
 .container {
   max-width: 1160px;
@@ -129,7 +129,7 @@
 .main-page {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100% !important;
   justify-content: space-between;
 }
 .m-p {
