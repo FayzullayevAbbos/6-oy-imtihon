@@ -49,6 +49,7 @@ function MainPage({ setScore, getI, dark, cilckDark }) {
     }, 9000);
     if(getI[0]){
       setStart(true)
+      setOlibtashla(true)
       setSum(false)
     }
   },[changeQuiz])
